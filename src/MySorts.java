@@ -4,7 +4,7 @@
 public class MySorts {
     // the number of items in a sub array that when bellow an algo will use insert instead of itself
     private final static int INSERT_THRESHOLD = 5;
-    //
+    //threshold for the minimum distance between elements in the array
     private final static int SHELL_THRESHOLD = 3;
 
     public static void main(String[] args) {
@@ -90,7 +90,8 @@ public class MySorts {
         if (arr != null && n > 1) {
             if (n > arr.length)
                 n = arr.length;
-            if(n < 10)insert(arr, n);
+            if(n < 10)//if the array is too small just do an insert sort
+                insert(arr, n);
             Comparable[] temp = new Comparable[n];
             merge(arr, 0, n - 1, temp);
         }
