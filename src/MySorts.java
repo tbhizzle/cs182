@@ -1,9 +1,6 @@
-/**
- * Created by O120 on 2/5/2015.
- */
 public class MySorts {
     // the number of items in a sub array that when bellow an algo will use insert instead of itself
-    private final static int INSERT_THRESHOLD = 5;
+    private final static int MERGE_THRESHOLD = 5;
     //threshold for the minimum distance between elements in the array
     private final static int SHELL_THRESHOLD = 3;
 
@@ -106,7 +103,7 @@ public class MySorts {
             if(middle == l)
                 middle++;
 
-            if(r-l < INSERT_THRESHOLD)//do a insert sort instead of a recursvie merge sort on small sections
+            if(r-l < MERGE_THRESHOLD)//do a insert sort instead of a recursvie merge sort on small sections
                 insert(arr, r-l, l, 1);
             //sort the two halves
             merge(arr, l, middle-1, temp);
